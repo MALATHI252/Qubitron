@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper Presentation Registration</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: #f0f0f0;
+}
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+h1 {
+  text-align: center;
+  text-shadow: 0 0 10px cyan;
+  font-size: 1.8rem;
+}
+form { margin-top: 20px; }
+label {
+  display: block;
+  margin: 8px 0 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #111;
+  color: #fff;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+fieldset {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid cyan;
+  border-radius: 10px;
+}
+legend {
+  color: cyan;
+  padding: 0 8px;
+}
+.participant-box {
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background: #111;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+}
+.participant-box h3 {
+  margin-top: 0;
+  color: #00ffff;
+  text-shadow: 0 0 6px cyan;
+}
+button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: cyan;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: pulseBtn 1.5s infinite;
+}
+button:hover { background: #00ffaa; }
+@keyframes pulseBtn {
+  0% { transform: scale(1); box-shadow: 0 0 10px cyan; }
+  50% { transform: scale(1.07); box-shadow: 0 0 25px #00ffaa; }
+  100% { transform: scale(1); box-shadow: 0 0 10px cyan; }
+}
+.link-box {
+  text-align: center;
+  margin-top: 20px;
+}
+.link-box a {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #25d366;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,255,100,0.7);
+  transition: 0.3s;
+  margin: 8px;
+  animation: pulseWhats 2s infinite;
+}
+@keyframes pulseWhats {
+  0% { transform: scale(1); box-shadow: 0 0 10px #25d366; }
+  50% { transform: scale(1.08); box-shadow: 0 0 25px #00ff7f; }
+  100% { transform: scale(1); box-shadow: 0 0 10px #25d366; }
+}
+.link-box a.rules {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 20px rgba(0,255,255,0.7);
+  animation: glowBounce 1.5s infinite alternate;
+}
+@keyframes glowBounce {
+  0% { transform: scale(1); box-shadow: 0 0 10px cyan; }
+  50% { transform: scale(1.08); box-shadow: 0 0 20px #00ffaa; }
+  100% { transform: scale(1); box-shadow: 0 0 10px cyan; }
+}
+@media(max-width:600px){
+  .container { margin: 10px; padding: 10px; }
+  h1 { font-size: 1.5rem; }
+  input, select { font-size: 0.85rem; padding: 8px; }
+  button { width: 100%; font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Paper Presentation Registration</h1>
+
+  <form id="paperForm">
+    <fieldset>
+      <legend>Team Information (2 Members Only)</legend>
+      <label for="teamName">Team Name</label>
+      <input type="text" id="teamName" name="teamName" placeholder="Enter Team Name" required>
+
+      <!-- Participant 1 -->
+      <div class="participant-box">
+        <h3>Participant 1 (Leader)</h3>
+        <label>Full Name</label>
+        <input type="text" name="p1name" required>
+        <label>Register Number</label>
+        <input type="text" name="p1reg" pattern="[0-9]{12}" placeholder="12-digit Register Number" required>
+        <label>Department</label>
+        <select name="p1dept" required>
+          <option value="">Select Department</option>
+          <option>ECE</option><option>CSE</option><option>EEE</option>
+          <option>IT</option><option>Civil</option><option>Mech</option>
+        </select>
+        <label>Year</label>
+        <select name="p1year" required>
+          <option value="">Select Year</option>
+          <option>1st Year</option><option>2nd Year</option>
+          <option>3rd Year</option><option>4th Year</option>
+        </select>
+        <label>Email ID</label>
+        <input type="email" name="p1email" placeholder="Enter Email ID" required>
+        <label>Phone Number</label>
+        <input type="tel" name="p1phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+      </div>
+
+      <!-- Participant 2 -->
+      <div class="participant-box">
+        <h3>Participant 2</h3>
+        <label>Full Name</label>
+        <input type="text" name="p2name" required>
+        <label>Register Number</label>
+        <input type="text" name="p2reg" pattern="[0-9]{12}" placeholder="12-digit Register Number" required>
+        <label>Department</label>
+        <select name="p2dept" required>
+          <option value="">Select Department</option>
+          <option>ECE</option><option>CSE</option><option>EEE</option>
+          <option>IT</option><option>Civil</option><option>Mech</option>
+        </select>
+        <label>Year</label>
+        <select name="p2year" required>
+          <option value="">Select Year</option>
+          <option>1st Year</option><option>2nd Year</option>
+          <option>3rd Year</option><option>4th Year</option>
+        </select>
+        <label>Email ID</label>
+        <input type="email" name="p2email" placeholder="Enter Email ID" required>
+        <label>Phone Number</label>
+        <input type="tel" name="p2phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+      </div>
+    </fieldset>
+
+    <button type="submit">🚀 Submit Registration</button>
+  </form>
+
+  <div class="link-box">
+    <p>👉 Join our official WhatsApp group:</p>
+    <a href="https://chat.whatsapp.com/GD6RZa8fZM76la3QjmQUZT?mode=ac_t" target="_blank">💬 Join WhatsApp Group</a>
+    <p>📄 Click here-Because knowing the rules is step one:</p>
+    <a href="https://drive.google.com/file/d/1BTsJ37Q95e1GvdBWDhxqqU2fgSaeaIJR/view?usp=drivesdk" target="_blank" class="rules">✨ View Rules ✨</a>
+  </div>
+</div>
+
+<script>
+const paperForm = document.getElementById("paperForm");
+paperForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+  // Show alert immediately
+  const goBack = confirm("✅ Registration submitted successfully!\nClick OK to go back or Cancel to stay on this page.");
+  if (goBack) {
+    window.history.back();
+  } else {
+    paperForm.reset();
+  }
+});
+</script>
+
+</body>
+</html>
