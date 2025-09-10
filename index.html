@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Qubitron v25 - Registration</title>
+
   <style>
     body {
       margin: 0;
       font-family: "Times New Roman", serif;
       background: linear-gradient(135deg, rgba(10, 10, 63, 0.9), rgba(26, 10, 63, 0.9)),
-                  url("index.jpg") no-repeat center center fixed;
+                  url("https://malathi252.github.io/Sympo_Qubitron_25/index.jpg") no-repeat center center fixed;
       background-size: cover;
       color: white;
       text-align: center;
@@ -25,13 +26,13 @@
 
     h2 {
       font-size: 2.5rem;
-      color: #ffd700; /* gold */
+      color: #ffd700;
       text-shadow: 0 0 12px #ffd700;
       animation: fadeInUp 2s ease-out;
     }
 
     .highlight {
-      color: #33cccc; /* teal */
+      color: #33cccc;
       font-weight: bold;
       font-size: 1.2rem;
       animation: fadeIn 2.2s ease-out;
@@ -41,61 +42,25 @@
       animation: fadeIn 2.5s ease-out;
     }
 
-    form {
-      margin: 20px auto;
-      max-width: 450px;
-      padding: 20px;
-      background: rgba(10, 10, 60, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      text-align: left;
-      animation: fadeInUp 2.5s ease-out;
-    }
-
-    label {
-      font-size: 1rem;
-      margin-bottom: 5px;
-      display: block;
-      color: #ffd700; /* gold */
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0 16px 0;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    input, select {
-      background: #222244;
-      color: #ffffff;
-    }
-
-    input:focus, select:focus {
-      border: 2px solid #ffd700;
-    }
-
-    button {
-      background: linear-gradient(135deg, #ffd700, #ff8c00);
-      color: #0a0a3f;
-      cursor: pointer;
+    /* 🚫 Registration Closed Box */
+    .closed-box {
+      margin: 40px auto;
+      max-width: 500px;
+      padding: 30px;
+      background: rgba(60, 0, 0, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+      font-size: 1.8rem;
       font-weight: bold;
-      letter-spacing: 1px;
-      font-family: "Times New Roman", serif;
-      border: none;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-      animation: pulse 2s infinite;
-      transition: all 0.3s ease-in-out;
+      color: #ff4d4d;
+      animation: fadeInUp 2s ease-out, pulseRed 2s infinite;
     }
 
-    button:hover {
-      background: linear-gradient(135deg, #33cccc, #00ffcc);
-      color: #0a0a3f;
-      transform: scale(1.08);
-      box-shadow: 0 0 25px rgba(0, 255, 204, 0.9);
+    .closed-sub {
+      font-size: 1rem;
+      color: #ffcccc;
+      margin-top: 10px;
+      display: block;
     }
 
     footer {
@@ -106,6 +71,7 @@
       animation: fadeIn 3s ease-out;
     }
 
+    /* Animations */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-40px); }
       to { opacity: 1; transform: translateY(0); }
@@ -121,23 +87,10 @@
       to { opacity: 1; }
     }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
-      50% { box-shadow: 0 0 25px rgba(255, 215, 0, 1); }
-      100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 1.5rem; }
-      h2 { font-size: 2rem; }
-      form { padding: 15px; }
-    }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 1.2rem; }
-      h2 { font-size: 1.5rem; }
-      form { padding: 12px; }
-      button { padding: 10px; }
+    @keyframes pulseRed {
+      0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); }
+      50% { box-shadow: 0 0 30px rgba(255, 0, 0, 1); }
+      100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); }
     }
   </style>
 </head>
@@ -148,50 +101,12 @@
   <p class="highlight">INTERDEPARTMENTAL TECHNICAL SYMPOSIUM</p>
   <p>Student Registration Portal</p>
 
-  <form id="registerForm">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="Full Name" placeholder="Enter your name" required>
-
-    <label for="email">Email ID</label>
-    <input type="email" id="email" name="Email ID" placeholder="Enter your email" required>
-
-    <label for="dept">Department</label>
-    <select id="dept" name="Department" required>
-      <option value="">-- Select Department --</option>
-      <option value="ECE">Electronics and Communication Engineering (ECE)</option>
-      <option value="CSE">Computer Science and Engineering (CSE)</option>
-      <option value="IT">Information Technology (IT)</option>
-      <option value="EEE">Electrical and Electronics Engineering (EEE)</option>
-      <option value="MECH">Mechanical Engineering (MECH)</option>
-      <option value="CIVIL">Civil Engineering (CIVIL)</option>
-    </select>
-
-    <button type="submit">🚀 Register Now</button>
-  </form>
+  <!-- 🚫 Registration Closed Message -->
+  <div class="closed-box">
+    🚫 Registration Closed 🚫
+    <span class="closed-sub">Thank you for your interest. See you at the event!</span>
+  </div>
 
   <footer>© Qubitron v25 | Department of ECE</footer>
-
-  <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwfm6LJ-xZptEjfEIBjL8MVS3mxMIapf1y3M9mjooc4eKpk1y-LUKsmEDhHgp6KGUQw/exec";
-    const registerForm = document.getElementById("registerForm");
-    const submitButton = registerForm.querySelector("button");
-
-    registerForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-      submitButton.disabled = true;
-      submitButton.textContent = "Processing... ⏳";
-
-      // Immediate alert for successful registration
-      alert("✅ You have successfully registered!");
-      window.location.href = "events.html";
-
-      // Send data asynchronously
-      const formData = new FormData(registerForm);
-      fetch(scriptURL, { method: "POST", body: formData })
-        .catch(error => {
-          console.error("Registration failed:", error.message);
-        });
-    });
-  </script>
 </body>
 </html>
